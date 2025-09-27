@@ -1,5 +1,5 @@
-@setup
 Feature: Common setup
 
-  Scenario: Setup once per feature
-  * def currentId = Math.floor(Date.now() / 1000)
+  Background:
+    * def currentId = Math.floor(Date.now() / 1000)
+    * def baseUrl = 'http://localhost:3100/api'    

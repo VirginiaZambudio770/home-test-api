@@ -24,6 +24,7 @@ Feature: Inventory Page Object
 
   @addItem
   Scenario: Add item
+    * def newId = Math.floor(Date.now() / 1000)
     Given path 'add'
     And request { id: #(newId), name: "Hawaiian", image: "hawaiian.png", price: "$14" }
     When method post
@@ -31,6 +32,7 @@ Feature: Inventory Page Object
 
  @addItemExistent
   Scenario: Add item with existent id
+   * def newId = "10"
    Given path 'add'
    And request { id: #(newId), name: "Hawaiian", image: "hawaiian.png", price: "$14" }
    When method post
@@ -39,11 +41,11 @@ Feature: Inventory Page Object
   @addItemMissingInfo
   Scenario: Add item with missing information
     Given path 'add'
-    And request { name: 'Incomplete', price: '$5' }
+    And request { name: "Hawaiian", image: "hawaiian.png" }
     When method post
     Then status 400
     # Validate response contains the expected error message
-    And match response.message == 'Bad Request'
+    And match response contains 'Not all requirements are met'
 
   @validateItemExists
   Scenario: Validate item exists in inventory

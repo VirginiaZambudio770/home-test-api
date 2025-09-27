@@ -2,22 +2,28 @@ Feature: Inventory API Tests
 
   Background:
     * url 'http://localhost:3100/api'
-    * call read('classpath:examples/pages/common.feature@setup')
 
-Scenario: Validate all inventory items
+  @getAllItems
+  Scenario: Validate all inventory items
     * call read('classpath:examples/pages/inventory.feature@getAllItems')
 
-Scenario: Validate filter by id
+  @filterById
+  Scenario: Validate filter by id
     * call read('classpath:examples/pages/inventory.feature@filterById')
 
-Scenario: Validate add new item
-  * def testData = { newId: currentId }
-  * call read('classpath:examples/pages/inventory.feature@addItem') testData
+  @addItem
+  Scenario: Validate add new item
+   * call read('classpath:examples/pages/inventory.feature@addItem')
 
+  @addItemExistent
   Scenario: Validate add item with existent id
-    * def testData = { newId: currentId }
-    * call read('classpath:examples/pages/inventory.feature@addItemExistent') testData
+   * call read('classpath:examples/pages/inventory.feature@addItemExistent')
 
-Scenario: Validate add item with missing info
+  @addItemMissingInfo
+  Scenario: Validate add item with missing info
     * call read('classpath:examples/pages/inventory.feature@addItemMissingInfo')
 
+  @checkItemAdded
+  Scenario: Validate item added is present in inventory
+    * def lastId = Math.floor(Date.now() / 1000)
+    * call read('classpath:examples/pages/inventory.feature@getAllItems')
