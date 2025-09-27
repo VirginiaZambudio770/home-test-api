@@ -1,0 +1,12 @@
+package examples.runners;
+
+import com.intuit.karate.junit5.Karate;
+
+public class InventoryRunner {
+    @Karate.Test
+    Karate runTests() {
+        // mejor opción: absolute path in classpath
+        return Karate.run("classpath:examples/tests/inventoryTests.feature");
+    }
+}
+
