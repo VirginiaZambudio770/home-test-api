@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: examples.runners.InventoryRunner
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.952 s - in examples.runners.InventoryRunner
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.341 s - in examples.runners.InventoryRunner

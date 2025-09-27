@@ -9140,3 +9140,130 @@ Not all requirements are met
 1 < Keep-Alive: timeout=5
 {"data":[{"id":"1","name":"Classic Muzzarella","image":"classic.png","price":"$8"},{"id":"2","name":"Crispy Bacon","image":"bacon.png","price":"$9"},{"id":"3","name":"Baked Rolls x 8","image":"roll.png","price":"$10"},{"id":"4","name":"Garlic Mix","image":"garlicmix.png","price":"$9"},{"id":"5","name":"Margarita","image":"margarita.png","price":"$9"},{"id":"6","name":"Veggie","image":"veggie.png","price":"$8"},{"id":"7","name":"Super Pepperoni","image":"extrapeperoni.png","price":"$10"},{"id":"8","name":"Evergreen Cream","image":"evergreen.png","price":"$9"},{"id":"9","name":"Muzzarella BBQ","image":"bbqcheese.png","price":"$9"},{"id":"newId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"10","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":13,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"ccccc","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"currentId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942519,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":10,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942854,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942892,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943041,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943115,"name":"Hawaiian","image":"hawaiian.png","price":"$14"}]}
 
+00:21:03.266 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+00:21:04.380 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 8: getAllItems
+00:21:04.625 [main] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:3100/api/inventory
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+
+
+00:21:04.862 [main] DEBUG com.intuit.karate - response time in milliseconds: 232
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 1414
+1 < ETag: W/"586-USnGbYV70Zkftd1lavoiBohAIE0"
+1 < Date: Sat, 27 Sep 2025 03:21:04 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"data":[{"id":"1","name":"Classic Muzzarella","image":"classic.png","price":"$8"},{"id":"2","name":"Crispy Bacon","image":"bacon.png","price":"$9"},{"id":"3","name":"Baked Rolls x 8","image":"roll.png","price":"$10"},{"id":"4","name":"Garlic Mix","image":"garlicmix.png","price":"$9"},{"id":"5","name":"Margarita","image":"margarita.png","price":"$9"},{"id":"6","name":"Veggie","image":"veggie.png","price":"$8"},{"id":"7","name":"Super Pepperoni","image":"extrapeperoni.png","price":"$10"},{"id":"8","name":"Evergreen Cream","image":"evergreen.png","price":"$9"},{"id":"9","name":"Muzzarella BBQ","image":"bbqcheese.png","price":"$9"},{"id":"newId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"10","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":13,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"ccccc","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"currentId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942519,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":10,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942854,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942892,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943041,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943115,"name":"Hawaiian","image":"hawaiian.png","price":"$14"}]}
+
+00:21:04.976 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 17: filterById
+00:21:04.990 [main] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:3100/api/inventory/filter?id=3
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+
+
+00:21:05.009 [main] DEBUG com.intuit.karate - response time in milliseconds: 19
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 68
+1 < ETag: W/"44-vJ0RBTNCd/juNFNVN25r22XAjZQ"
+1 < Date: Sat, 27 Sep 2025 03:21:05 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"id":"3","name":"Baked Rolls x 8","image":"roll.png","price":"$10"}
+
+00:21:05.026 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 26: addItem
+00:21:05.087 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:3100/api/inventory/add
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 72
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+{"id":1758943265,"name":"Hawaiian","image":"hawaiian.png","price":"$14"}
+
+00:21:05.114 [main] DEBUG com.intuit.karate - response time in milliseconds: 26
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: text/plain; charset=utf-8
+1 < Content-Length: 2
+1 < ETag: W/"2-nOO9QiTIwXgNtWtBJezz8kv3SLc"
+1 < Date: Sat, 27 Sep 2025 03:21:05 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+OK
+
+00:21:05.133 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 34: addItemExistent
+00:21:05.143 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:3100/api/inventory/add
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 66
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+{"id":"10","name":"Hawaiian","image":"hawaiian.png","price":"$14"}
+
+00:21:05.161 [main] DEBUG com.intuit.karate - response time in milliseconds: 17
+1 < 400
+1 < X-Powered-By: Express
+1 < Content-Type: text/plain; charset=utf-8
+1 < Content-Length: 11
+1 < ETag: W/"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8"
+1 < Date: Sat, 27 Sep 2025 03:21:05 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+Bad Request
+
+00:21:05.178 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 42: addItemMissingInfo
+00:21:05.190 [main] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:3100/api/inventory/add
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 42
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+{"name":"Hawaiian","image":"hawaiian.png"}
+
+00:21:05.256 [main] DEBUG com.intuit.karate - response time in milliseconds: 66
+1 < 400
+1 < X-Powered-By: Express
+1 < Content-Type: text/html; charset=utf-8
+1 < Content-Length: 28
+1 < ETag: W/"1c-k7jAXLdqgoyddFLKVx/smZcPhI0"
+1 < Date: Sat, 27 Sep 2025 03:21:05 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+Not all requirements are met
+
+00:21:05.275 [main] INFO  c.intuit.karate.core.FeatureRuntime - classpath:examples/pages/inventory.feature - call by tag at line 8: getAllItems
+00:21:05.283 [main] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:3100/api/inventory
+1 > Host: localhost:3100
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/25)
+1 > Accept-Encoding: gzip,deflate
+
+
+00:21:05.304 [main] DEBUG com.intuit.karate - response time in milliseconds: 21
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 1487
+1 < ETag: W/"5cf-hSBjyD0SQYqtZtBeKVfMmQyM+R8"
+1 < Date: Sat, 27 Sep 2025 03:21:05 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"data":[{"id":"1","name":"Classic Muzzarella","image":"classic.png","price":"$8"},{"id":"2","name":"Crispy Bacon","image":"bacon.png","price":"$9"},{"id":"3","name":"Baked Rolls x 8","image":"roll.png","price":"$10"},{"id":"4","name":"Garlic Mix","image":"garlicmix.png","price":"$9"},{"id":"5","name":"Margarita","image":"margarita.png","price":"$9"},{"id":"6","name":"Veggie","image":"veggie.png","price":"$8"},{"id":"7","name":"Super Pepperoni","image":"extrapeperoni.png","price":"$10"},{"id":"8","name":"Evergreen Cream","image":"evergreen.png","price":"$9"},{"id":"9","name":"Muzzarella BBQ","image":"bbqcheese.png","price":"$9"},{"id":"newId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"10","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":13,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"ccccc","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":"currentId","name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942519,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":10,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942854,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758942892,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943041,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943115,"name":"Hawaiian","image":"hawaiian.png","price":"$14"},{"id":1758943265,"name":"Hawaiian","image":"hawaiian.png","price":"$14"}]}
+
